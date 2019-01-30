@@ -143,7 +143,7 @@ declare module 'react-google-maps/lib/components/addons/MarkerWithLabel' {
         clickable?: boolean
         cursor?: string
         draggable?: boolean
-        icon?: string | google.maps.Icon | google.maps.Symbol
+        icon?: { url: string; size: { width: number; height: number } }
         label?: google.maps.MarkerLabel
         opacity?: number
         options?: google.maps.MarkerOptions
