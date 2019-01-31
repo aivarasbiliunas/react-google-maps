@@ -335,7 +335,7 @@ declare module 'react-google-maps/lib/components/GoogleMap' {
         getDiv(): Element
         getHeading(): number
         getMapTypeId(): google.maps.MapTypeId | string
-        getProjection(): google.maps.Projection
+        getProjection(): google.maps.Projection | null
         getStreetView(): google.maps.StreetViewPanorama
         getTilt(): number
         getZoom(): number
@@ -510,7 +510,7 @@ declare module 'react-google-maps/lib/components/OverlayView' {
         static OVERLAY_MOUSE_TARGET: string
 
         getPanes(): google.maps.MapPanes
-        getProjection(): google.maps.MapCanvasProjection
+        getProjection?(): google.maps.MapCanvasProjection
     }
 }
 

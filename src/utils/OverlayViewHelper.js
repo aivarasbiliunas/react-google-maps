@@ -37,8 +37,12 @@ function ensureOfType(inst, type, factory) {
 }
 
 function getLayoutStylesByBounds(mapCanvasProjection, offset, bounds) {
-  const ne = mapCanvasProjection.fromLatLngToDivPixel(bounds.getNorthEast())
-  const sw = mapCanvasProjection.fromLatLngToDivPixel(bounds.getSouthWest())
+  const ne =
+    mapCanvasProjection &&
+    mapCanvasProjection.fromLatLngToDivPixel(bounds.getNorthEast())
+  const sw =
+    mapCanvasProjection &&
+    mapCanvasProjection.fromLatLngToDivPixel(bounds.getSouthWest())
   if (ne && sw) {
     return {
       left: `${sw.x + offset.x}px`,
@@ -54,7 +58,8 @@ function getLayoutStylesByBounds(mapCanvasProjection, offset, bounds) {
 }
 
 function getLayoutStylesByPosition(mapCanvasProjection, offset, position) {
-  const point = mapCanvasProjection.fromLatLngToDivPixel(position)
+  const point =
+    mapCanvasProjection && mapCanvasProjection.fromLatLngToDivPixel(position)
   if (point) {
     const { x, y } = point
     return {
